@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8" />
     <title>MOKEPON!</title>
+    <script src="./js/mokepon.js"> </script>
 </head>
 <body>
     <h1>MOKEPON! 🔥💧🌼</h1>
 
-    <section id="seleccionar_mascota">
+    <section id="seleccionar-mascota">
         <h2>Elige a tu mascota:</h2>
 
         <input type="radio" name="mascota" id="Hipodoge">
@@ -19,28 +20,18 @@
         <input type="radio" name="mascota" id="Ratigueya">
         <label for="Ratigueya">Ratigueya</label>
 
-        <input type="radio" name="mascota" id="Langostelvis">
-        <input type="radio" name="mascota" id="Tucapalma">
-        <input type="radio" name="mascota" id="Pydos">
-        Hipodoge -> Agua
-        Capipepo -> Planta
-        Ratigueya -> Fuego
-        Langostelvis -> Agua y Fuego
-        Tucapalma -> Agua y Planta
-        Pydos -> Planta y Fuego
-
-        <button>Seleccionar</button>
+        <button id="boton-mascota">Seleccionar</button>
     </section>
 
-    <section id="seleccionar_ataque">
+    <section id="seleccionar-ataque">
         <h2>Elige un ataque:</h2>
 
         <p>Tu mascota tiene <span>3</span> vidas</p>
         <p>La mascota del enemigo tiene <span>3</span> vidas</p>
         <p>
-            <button>Fuego 🔥</button>
-            <button>Agua 💧</button>
-            <button>Planta 🌼</button>
+            <button id="boton-fuego">Fuego 🔥</button>
+            <button id="boton-agua">Agua 💧</button>
+            <button id="boton-planta">Planta 🌼</button>
         </p>
     </section>
 
@@ -49,7 +40,7 @@
     </section>
 
       <section id="reiniciar">
-        <button>Reiniciar partida</button>
+        <button id="boton-reiniciar">Reiniciar partida</button>
       </section>  
 </body>
 
