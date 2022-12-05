@@ -1,6 +1,9 @@
 let ataqueJugador = ""
 let ataqueEnemigo = ""
 
+let vidasJugador = 3;
+let vidasEnemigo = 3;
+
 window.addEventListener('load',iniciarJuego)
 
 function iniciarJuego() {
@@ -88,6 +91,55 @@ function ataqueAleatorio(){
     } else if (ataque==3) {
         ataqueEnemigo = "PLANTA"
     } 
+    combate()
+}
+function combate(){
+
+    let spanVidasJugador = document.getElementById('vidas-jugador')
+    let spanVidasEnemigo = document.getElementById('vidas-enemigo')
+
+    let resultado = ""
+
+    if (ataqueJugador == ataqueEnemigo) {
+        resultado = "EMPATE"
+      } else if (ataqueJugador == "FUEGO" && ataqueEnemigo == "PLANTA") {
+        resultado = "GANASTE"
+        vidasEnemigo= vidasEnemigo-1
+        spanVidasEnemigo.innerHTML= vidasEnemigo
+      } else if (ataqueJugador == "AGUA" && ataqueEnemigo == "FUEGO") {
+        resultado = "GANASTE"
+        vidasEnemigo= vidasEnemigo-1
+        spanVidasEnemigo.innerHTML= vidasEnemigo
+      } else if (ataqueJugador == "PLANTA" && ataqueEnemigo == "AGUA") {
+        resultado = "GANASTE"
+        vidasEnemigo= vidasEnemigo-1
+        spanVidasEnemigo.innerHTML= vidasEnemigo
+      } else {
+        resultado = "PERDISTE"
+        vidasJugador= vidasJugador-1
+        spanVidasJugador.innerHTML= vidasJugador
+      }
+      crearMensaje(resultado)
+
+      revisarVidas()
+}
+
+function revisarVidas(){
+    if(vidasEnemigo==0){
+        //GANAMOS
+    }
+    if(vidasJugador==0){
+        //PERDIMOS
+    }
+}
+function crearMensaje(resultado){
+
+    let seccionMensajes = document.getElementById('mensajes')
+
+    let parrafo = document.createElement('p')
+    parrafo.innerHTML = "Tu mokepon atacó con " + ataqueJugador + " , el mokepon enemigo atacó con " + ataqueEnemigo + ". - " + resultado + " -"
+
+    seccionMensajes.appendChild(parrafo)
 }
 function aleatorio(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
