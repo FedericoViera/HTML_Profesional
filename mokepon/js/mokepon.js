@@ -126,10 +126,10 @@ function combate(){
 
 function revisarVidas(){
     if(vidasEnemigo==0){
-        //GANAMOS
+        crearMensajeFinal("FELICITACIONES! GANASTE :D")
     }
     if(vidasJugador==0){
-        //PERDIMOS
+        crearMensajeFinal("Que lastima, has perdido D:")
     }
 }
 function crearMensaje(resultado){
@@ -138,6 +138,16 @@ function crearMensaje(resultado){
 
     let parrafo = document.createElement('p')
     parrafo.innerHTML = "Tu mokepon atacó con " + ataqueJugador + " , el mokepon enemigo atacó con " + ataqueEnemigo + ". - " + resultado + " -"
+
+    seccionMensajes.appendChild(parrafo)
+}
+function crearMensajeFinal(resultadoFinal){
+
+    let seccionMensajes = document.getElementById('mensajes')
+
+    let parrafo = document.createElement('p')
+    
+    parrafo.innerHTML = resultadoFinal
 
     seccionMensajes.appendChild(parrafo)
 }
