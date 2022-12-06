@@ -141,7 +141,7 @@ input:checked + label, input:hover + label {
     
 }
 
-@media (max-width: 400px){
+@media (max-width: 800px){
     .tarjetas {
         flex-direction: column;
     }
