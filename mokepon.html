@@ -37,26 +37,29 @@
     </section>
 
     <section id="seleccionar-ataque">
-        <h1 class="titulo">MOKEPON! 🔥💧🌼</h1>
+        <h1 class="titulo">Mokepon</h1>
 
-        <h2>Elige un ataque:</h2>
+        <h2 class="subtitulo">Elige a tu ataque:</h2>
 
         <div>
-            <button id="boton-fuego">Fuego 🔥</button>
-            <button id="boton-agua">Agua 💧</button>
-            <button id="boton-planta">Planta 🌼</button>
+            <button class="botones-ataques" id="boton-fuego">Fuego 🔥</button>
+            <button class="botones-ataques" id="boton-agua">Agua 💧</button>
+            <button class="botones-ataques" id="boton-planta">Planta 🌼</button>
         </div>
 
-        <div>   
-            <section id="mensajes">
-            </section>
-        
-              <section id="seccion-reiniciar">
-                    <button id="boton-reiniciar">Reiniciar partida</button>
-              </section> 
+         
+        <div id="mensajes">
+            <p id="resultado">¡Mucha suerte!</p>                            
+
+            <section id="seccion-reiniciar">
+                <button id="boton-reiniciar">Reiniciar partida</button>
+            </section> 
         </div>
 
-        <div>   
+        <div id="mensajes-ataques">   
+            <div id="ataques-jugador"></div>
+            <div id="ataques-enemigo"></div>
+
             <p>Tu <span id="mascota-jugador">mokepon</span> tiene <span id="vidas-jugador">3</span> vidas</p>
             <p>El <span id="mascota-enemigo">mokepon</span> enemigo tiene <span id="vidas-enemigo">3</span> vidas</p>
         </div>

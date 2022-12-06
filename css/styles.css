@@ -64,5 +64,49 @@ input {
 }
 
 #seleccionar-ataque {
-    
+    flex-direction: column;
+    align-items: center
+}
+
+.botones-ataques {
+    width: 149px;
+    font-size: 23px;
+    color: black;
+    background-color: #89CFFD;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px;
+    border-radius: 20px;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+#mensajes {
+    background: #FF7F3F;
+    padding: 10px;
+    border-radius: 20px;
+    width: 436px;
+    height: 65px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#boton-reiniciar {
+    padding: 10px;
+    border-radius: 20px;
+    width: 436px;
+    height: 65px;
+    background-color: #FF7F3F;
+    border: transparent;
+    color: #89CFFD;
+    margin-top: 20px;
+    font-size: 20px;
+    font-family: 'Fredoka One', cursive;
+    color: black;
+}
+
+#mensajes-ataques {
+    margin-top: 80px
 }

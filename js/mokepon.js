@@ -64,7 +64,7 @@ function seleccionarMascotaJugador() {
         botonMascotaJugador.disabled=true
 
         let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
-        sectionSeleccionarAtaque.style.display = 'block'
+        sectionSeleccionarAtaque.style.display = 'flex'
 
         let sectionSeleccionarMascota= document.getElementById('seleccionar-mascota')
         sectionSeleccionarMascota.style.display = 'none'
@@ -160,13 +160,19 @@ function revisarVidas(){
 }
 function crearMensaje(resultado){
 
-    let seccionMensajes = document.getElementById('mensajes')
+    let seccionMensajes = document.getElementById('resultado')
+    let ataquesjugador = document.getElementById('ataques-jugador')
+    let ataquesEnemigo = document.getElementById('ataques-enemigo')
 
-    let parrafo = document.createElement('p')
-    parrafo.innerHTML = "Tu mokepon atacó con " + ataqueJugador + " , el mokepon enemigo atacó con " + ataqueEnemigo + ". - " + resultado + " -"
-    
-    seccionMensajes.appendChild(parrafo)
+    let nuevoAtaqueJugador = document.createElement('p')
+    let nuevoAtaqueEnemigo = document.createElement('p')
 
+    seccionMensajes.innerHTML = resultado
+    nuevoAtaqueJugador.innerHTML = ataqueJugador
+    nuevoAtaqueEnemigo.innerHTML = ataqueEnemigo
+
+    ataquesjugador.appendChild(nuevoAtaqueJugador)
+    ataquesEnemigo.appendChild(nuevoAtaqueEnemigo)
 }
 function crearMensajeFinal(resultadoFinal){
 
@@ -179,16 +185,14 @@ function crearMensajeFinal(resultadoFinal){
     let botonPlanta = document.getElementById('boton-planta')
     botonPlanta.disabled = true
 
-    let seccionMensajes = document.getElementById('mensajes')
+    let seccionMensajes = document.getElementById('resultado')
 
     let parrafo = document.createElement('p')
     
-    parrafo.innerHTML = resultadoFinal
-
-    seccionMensajes.appendChild(parrafo)
+    seccionMensajes.innerHTML = resultadoFinal
 
     let seccionReiniciar = document.getElementById('seccion-reiniciar')
-    seccionReiniciar.style.display = 'block'
+    seccionReiniciar.style.display = 'flex'
 }
 function reiniciarPartida(){
     location.reload()
