@@ -8,6 +8,9 @@ window.addEventListener('load',iniciarJuego)
 
 function iniciarJuego() {
 
+    let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
+    sectionSeleccionarAtaque.style.display = 'none'
+
     let botonMascotaJugador = document.getElementById('boton-mascota')
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
     
@@ -20,9 +23,16 @@ function iniciarJuego() {
     let botonPlanta = document.getElementById('boton-planta')
     botonPlanta.addEventListener('click', ataquePlanta)
     
+    let botonReiniciar = document.getElementById('boton-reiniciar')
+    botonReiniciar.addEventListener('click', reiniciarPartida)
+
+    let seccionReiniciar = document.getElementById('seccion-reiniciar')
+    seccionReiniciar.style.display = 'none'
+
 }
 
 function seleccionarMascotaJugador() {
+
 
     let radioHipodoge = document.getElementById('Hipodoge')
     let radioCapipepo = document.getElementById('Capipepo')
@@ -31,10 +41,16 @@ function seleccionarMascotaJugador() {
 
     if(radioHipodoge.checked){
         nombreMascotaJugador = "Hipodoge"
+        radioCapipepo.disabled=true
+        radioRatigueya.disabled=true
     } else if (radioCapipepo.checked){
         nombreMascotaJugador = "Capipepo"
+        radioHipodoge.disabled=true
+        radioRatigueya.disabled=true
     } else if (radioRatigueya.checked) {
         nombreMascotaJugador = "Ratigueya"
+        radioHipodoge.disabled=true
+        radioCapipepo.disabled=true
     } else {
         alert("No has seleccionado ningún mokepon")
     }
@@ -43,9 +59,19 @@ function seleccionarMascotaJugador() {
 
     if(nombreMascotaJugador!=""){
         mascotaJugador.innerHTML=nombreMascotaJugador
+
+        let botonMascotaJugador = document.getElementById('boton-mascota')
+        botonMascotaJugador.disabled=true
+
+        let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
+        sectionSeleccionarAtaque.style.display = 'block'
+
+        let sectionSeleccionarMascota= document.getElementById('seleccionar-mascota')
+        sectionSeleccionarMascota.style.display = 'none'
+
+        seleccionarMascotaEnemigo() 
     }   
 
-    seleccionarMascotaEnemigo() 
 }
 
 function seleccionarMascotaEnemigo() {
@@ -138,10 +164,20 @@ function crearMensaje(resultado){
 
     let parrafo = document.createElement('p')
     parrafo.innerHTML = "Tu mokepon atacó con " + ataqueJugador + " , el mokepon enemigo atacó con " + ataqueEnemigo + ". - " + resultado + " -"
-
+    
     seccionMensajes.appendChild(parrafo)
+
 }
 function crearMensajeFinal(resultadoFinal){
+
+    let botonFuego = document.getElementById('boton-fuego')
+    botonFuego.disabled = true
+    
+    let botonAgua = document.getElementById('boton-agua')
+    botonAgua.disabled = true
+
+    let botonPlanta = document.getElementById('boton-planta')
+    botonPlanta.disabled = true
 
     let seccionMensajes = document.getElementById('mensajes')
 
@@ -150,6 +186,12 @@ function crearMensajeFinal(resultadoFinal){
     parrafo.innerHTML = resultadoFinal
 
     seccionMensajes.appendChild(parrafo)
+
+    let seccionReiniciar = document.getElementById('seccion-reiniciar')
+    seccionReiniciar.style.display = 'block'
+}
+function reiniciarPartida(){
+    location.reload()
 }
 function aleatorio(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
