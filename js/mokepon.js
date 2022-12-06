@@ -28,8 +28,34 @@ const botonReiniciar = document.getElementById('boton-reiniciar')
 let ataqueJugador = ""
 let ataqueEnemigo = ""
 
-let vidasJugador = 3;
-let vidasEnemigo = 3;
+let vidasJugador = 3
+let vidasEnemigo = 3
+
+let mokepones = [];
+
+class Mokepon {
+     constructor(nombre, foto, vida) {
+        this.nombre = nombre
+        this.foto = foto
+        this.vida = vida
+        this.ataques = []
+     }
+}
+
+let hipodoge = new Mokepon('Hipodoge','./assests/mokepons_mokepon_hipodoge_attack.png','5')
+let capipepo = new Mokepon('Capipepo','./assests/mokepons_mokepon_capipepo_attack.png','5')
+let ratigueya = new Mokepon('Ratigueya','./assests/mokepons_mokepon_ratigueya_attack.png','5')
+
+hipodoge.ataques.push(
+
+    { nombre: '💧', id: 'boton-agua' },
+    { nombre: '💧', id: 'boton-agua' },
+    { nombre: '💧', id: 'boton-agua' },
+    { nombre: '🔥', id: 'boton-fuego' },
+    { nombre: '🌼', id: 'boton-planta' }
+)
+mokepones.push(hipodoge,capipepo,ratigueya)
+console.log(mokepones)
 
 window.addEventListener('load',iniciarJuego)
 
