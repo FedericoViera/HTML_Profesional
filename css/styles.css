@@ -15,6 +15,8 @@ body {
 .titulo {
     color: white;
     font-size: 48px;
+    height: 10px;
+    
 }
 
 .subtitulo {
@@ -63,6 +65,10 @@ input {
     display: none;
 }
 
+input:checked + label {
+    background-color: #009EFF;
+}
+
 #seleccionar-ataque {
     flex-direction: column;
     align-items: center
@@ -83,7 +89,7 @@ input {
 
 #mensajes {
     background: #FF7F3F;
-    padding: 10px;
+    padding: px;
     border-radius: 20px;
     width: 436px;
     height: 65px;
@@ -91,6 +97,7 @@ input {
     display: flex;
     flex-direction: column;
     align-items: center;
+    align-content: center;
 }
 
 #boton-reiniciar {
@@ -107,6 +114,34 @@ input {
     color: black;
 }
 
-#mensajes-ataques {
-    margin-top: 80px
+#mensajes-ataques {    
+    display: grid;    
+    grid-template-columns: 160px 160px;
+    color: white;
+    text-align: center;
+}
+
+#vidas-jugador, #vidas-enemigo {
+    font-size: 36px;
+    height: 8px;
+}
+#mascota-jugador, #mascota-enemigo {
+    font-size: 22px;
+}
+
+.mensajes-jugador,.mensajes-enemigo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+@media (max-width: 400px){
+    .tarjetas {
+        flex-direction: column;
+    }
+    .botones-ataques{
+        display: flex;
+        flex-direction: column;
+    }
 }

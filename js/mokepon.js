@@ -187,7 +187,6 @@ function crearMensajeFinal(resultadoFinal){
 
     let seccionMensajes = document.getElementById('resultado')
 
-    let parrafo = document.createElement('p')
     
     seccionMensajes.innerHTML = resultadoFinal
 
