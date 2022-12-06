@@ -65,8 +65,13 @@ input {
     display: none;
 }
 
-input:checked + label {
+input:checked + label, input:hover + label {
     background-color: #009EFF;
+}
+
+#boton-mascota:hover, button:hover  {
+    color: black;
+    background-color: white;
 }
 
 #seleccionar-ataque {
