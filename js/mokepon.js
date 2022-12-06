@@ -132,14 +132,31 @@ function seleccionarMascotaJugador() {
         sectionSeleccionarAtaque.style.display = 'flex'
         sectionSeleccionarMascota.style.display = 'none'
 
+        agregarAtaques(nombreMascotaJugador)
         seleccionarMascotaEnemigo() 
     }   
 
 }
 
+function agregarAtaques(nombreMascotaJugador){
+
+    mokepones.forEach((mokepon) => {
+
+            if(mokepon.nombre==nombreMascotaJugador){
+
+                mokepon.ataques
+            }
+            let boton=`
+            <button class="botones-ataques" id="boton-fuego">Fuego 🔥</button>
+            <button class="botones-ataques" id="boton-agua">Agua 💧</button>
+            <button class="botones-ataques" id="boton-planta">Planta 🌼</button>
+            `
+    })
+}
+
 function seleccionarMascotaEnemigo() {
 
-    let mascotaEnemigoAleatoria = aleatorio(0,mokepones.length-1) 
+    let mascotaEnemigoAleatoria = aleatorio(0,mokepones.length-1)   
 
     mascotaEnemigo.innerHTML = mokepones[mascotaEnemigoAleatoria].nombre
 }
