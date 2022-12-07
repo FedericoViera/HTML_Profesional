@@ -240,7 +240,7 @@ function revisarVidas() {
     if(vidasJugador>vidasEnemigo){
         crearMensajeFinal("¡FELICITACIONES! GANASTE")
     } else if (vidasJugador<vidasEnemigo) {
-        crearMensajeFinal("QUE LASTIMA! PERDISTE")
+        crearMensajeFinal("¡QUE LASTIMA! PERDISTE")
     } else{ 
         crearMensajeFinal("¡EMPATE!")   
  }
