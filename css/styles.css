@@ -16,6 +16,7 @@ body {
     color: white;
     font-size: 48px;
     height: 10px;
+    margin-top: -1px;
     
 }
 
@@ -142,7 +143,7 @@ button {
 
 #ataques-jugador, #ataques-enemigo {
     margin-top: -14px;
-    font-size: 18px;
+    font-size: 21px;
 }
 .mensajes-jugador,.mensajes-enemigo {
     display: flex;
