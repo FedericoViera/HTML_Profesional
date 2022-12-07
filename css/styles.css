@@ -91,7 +91,13 @@ input:checked + label, input:hover + label {
     font-family: 'Poppins', sans-serif;
 
 }
-
+button {
+    padding: 0px;
+    background-color: transparent;
+    border-radius: 0px;
+    border-color: transparent;
+    
+}
 #mensajes {
     background: #FF7F3F;
     padding: px;
